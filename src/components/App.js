@@ -4,7 +4,9 @@ import instance from "../apis/movies";
 class App extends React.Component {
   state = {
     authorized: false,
+    username: null,
     movies: [],
+    user_movies: [],
   };
 
   componentDidMount() {
