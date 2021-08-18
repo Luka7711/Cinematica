@@ -10,7 +10,9 @@ const retrieveMovies = axios.create({
   method: "get",
 });
 
-export default {
+const calls = {
   addMovieToDb,
   retrieveMovies,
 };
+
+export default calls;
