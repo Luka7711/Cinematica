@@ -1,11 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import instance from "../../apis/movies";
 import "./module.list.css";
-import {
-  BrowserRouter as router,
-  Redirect,
-  useHistory,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const List = () => {
   const [movies, setMovies] = useState([]);

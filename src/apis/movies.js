@@ -10,9 +10,15 @@ const retrieveMovies = axios.create({
   method: "get",
 });
 
+const getDetails = axios.create({
+  baseURL: "http://localhost:9000/chicago-cinema/movies",
+  method: "get",
+});
+
 const calls = {
   addMovieToDb,
   retrieveMovies,
+  getDetails,
 };
 
 export default calls;
