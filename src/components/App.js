@@ -2,6 +2,7 @@ import React from "react";
 import List from "./Movie/List";
 import About from "./About/About";
 import Navigation from "./Navigation/Navigation";
+import Details from "./Movie/Details/Details";
 import "./module.app.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -16,6 +17,9 @@ class App extends React.Component {
               <List />
             </Route>
 
+            <Route path="/details/:id">
+              <Details />
+            </Route>
             <Route path="/about">
               <About />
             </Route>

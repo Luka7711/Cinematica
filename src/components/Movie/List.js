@@ -20,16 +20,16 @@ const List = () => {
     setMovies(response.data.movies);
   };
 
-  const redirectToDetails = (e) => {
-    history.push("/about");
+  const redirectToDetails = (id) => {
+    history.push(`/details/${id}`);
   };
 
   const collection = movies.map((movie) => {
     if (movie.details.title.image) {
       return (
         <div
-          key={movie.event.title}
-          onClick={redirectToDetails}
+          key={movie._id}
+          onClick={() => redirectToDetails(movie._id)}
           className="poster-container"
         >
           <img
