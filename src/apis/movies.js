@@ -15,10 +15,20 @@ const getDetails = axios.create({
   method: "get",
 });
 
+const getCast = axios.create({
+  url: "https://imdb8.p.rapidapi.com/actors/get-bio",
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "d3e39eeecfmsh3998390045e2466p154abfjsna7eb052dce03",
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+  },
+});
+
 const calls = {
   addMovieToDb,
   retrieveMovies,
   getDetails,
+  getCast,
 };
 
 export default calls;

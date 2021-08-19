@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import instance from "../../apis/movies";
+import Loader from "../Loader/Loader";
 import "./module.list.css";
 import { useHistory } from "react-router-dom";
 

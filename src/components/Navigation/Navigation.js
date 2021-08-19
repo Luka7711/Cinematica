@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LinkItems from "./Links/LinkItems";
 
-const Navigation = () => {
+const Navigation = ({ userId }) => {
   const [auth, setAuth] = useState(false);
   const [username, setUsername] = useState(null);
 

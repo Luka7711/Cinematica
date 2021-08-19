@@ -1,0 +1,38 @@
+.main-container {
+  color: rgb(236, 235, 235);
+  display: flex;
+  margin: 50px 100px;
+  background-color: #1a1919;
+  padding: 50px;
+}
+
+.event-container {
+  width: 300px;
+}
+
+.movie-details {
+  width: 500px;
+}
+
+.poster-img {
+  width: 250px;
+  border-radius: 10px;
+}
+.star {
+  color: #ffc217;
+}
+.map .marker {
+  color: red;
+}
+
+.genre {
+  padding: 5px 15px;
+  border: 1px solid;
+  color: rgb(236, 235, 235);
+  border-radius: 15px;
+}
+
+.rating-num {
+  font-size: 1.3em !important;
+  padding-left: 10px;
+}
