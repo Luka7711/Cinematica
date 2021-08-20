@@ -1,38 +1,69 @@
 .main-container {
   color: rgb(236, 235, 235);
-  display: flex;
-  margin: 50px 100px;
+  margin: 50px 300px;
   background-color: #1a1919;
   padding: 50px;
 }
 
-.event-container {
-  width: 300px;
+.detail-sub {
+  display: flex;
 }
 
-.movie-details {
-  width: 500px;
+.detail-sub-2 {
+  width: 53%;
 }
 
+.detail-sub-1 {
+  width: 17%;
+}
+
+.detail-sub-3 {
+  width: 30%;
+}
 .poster-img {
-  width: 250px;
+  width: 150px;
   border-radius: 10px;
 }
 .star {
   color: #ffc217;
 }
-.map .marker {
+.map {
   color: red;
 }
 
 .genre {
   padding: 5px 15px;
-  border: 1px solid;
+  border: 0.5px solid;
   color: rgb(236, 235, 235);
   border-radius: 15px;
 }
 
+.rating {
+  font-size: 0.8em;
+}
+
 .rating-num {
   font-size: 1.3em !important;
-  padding-left: 10px;
+  padding-left: 5px;
+}
+
+.imglist-container {
+  display: flex;
+  width: 750px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.category-title {
+  margin-top: 50px;
+  border-left: 5px solid #ffc217;
+  padding-left: 7px;
+}
+
+.cast-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }

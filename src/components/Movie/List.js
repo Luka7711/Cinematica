@@ -42,16 +42,6 @@ const List = () => {
 
   return (
     <Fragment>
-      <div className="cover-container"></div>
-      <div className="ui compact selection dropdown">
-        <i className="dropdown icon"></i>
-        <div className="text">Sort by</div>
-        <div className="menu">
-          <div className="item"></div>
-          <div className="item">B</div>
-          <div className="item">C</div>
-        </div>
-      </div>
       <div className="flex-box">{collection}</div>
     </Fragment>
   );

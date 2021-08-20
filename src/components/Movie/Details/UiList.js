@@ -1,6 +1,6 @@
 import React from "react";
 
-const UiList = ({ genres, poster, ratings, dates }) => {
+const UiList = ({ genres, poster, ratings, dates, address }) => {
   const generateRatingStars = () => {
     let stars = [];
     let fixedRating = parseFloat(ratings.toFixed());
@@ -18,6 +18,7 @@ const UiList = ({ genres, poster, ratings, dates }) => {
     const [year, month, day] = datePieces;
     return `${month}/${day}/${year}`;
   };
+
   if (genres) {
     return genres.map((genre) => {
       return (
@@ -43,6 +44,13 @@ const UiList = ({ genres, poster, ratings, dates }) => {
         </div>
       );
     });
+  } else if (address) {
+    return (
+      <div className="item">
+        <i className="map marker icon"></i>
+        {address}
+      </div>
+    );
   }
 };
 

@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import Main from "./Main";
 import { useParams } from "react-router";
 import instance from "../../../apis/movies";
+import "./module.details.css";
 
 const Detail = () => {
   const [movie, setMovie] = useState([]);
@@ -21,7 +22,7 @@ const Detail = () => {
     displayDetails(movie);
   }, [movie]);
 
-  const getMovieDetails = () => {
+  const getMovieDetails = (ids) => {
     instance.getDetails(`/${id}`).then(({ data }) => {
       setMovie(data);
     });
@@ -30,11 +31,9 @@ const Detail = () => {
   const displayDetails = ({ data }) => {
     if (data) {
       return (
-        <Fragment>
+        <div className="main-container">
           <Main mainDetails={data} />
-          <CastList cast={data.details.cast_ids} />
-          <Carousel images={data.details.images} />
-        </Fragment>
+        </div>
       );
     } else {
       return "Loading";
