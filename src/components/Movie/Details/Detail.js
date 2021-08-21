@@ -30,11 +30,7 @@ const Detail = () => {
 
   const displayDetails = ({ data }) => {
     if (data) {
-      return (
-        <div className="main-container">
-          <Main mainDetails={data} />
-        </div>
-      );
+      return <Main mainDetails={data} />;
     } else {
       return "Loading";
     }

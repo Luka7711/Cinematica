@@ -13,10 +13,10 @@ const Carousel = ({ images }) => {
     );
   });
   return (
-    <Fragment>
+    <div className="detail-sub-4">
       <h1 className="category-title">Photos</h1>
       <div className="imglist-container">{imgs}</div>
-    </Fragment>
+    </div>
   );
 };
 

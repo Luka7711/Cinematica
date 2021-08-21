@@ -1,6 +1,6 @@
 import React from "react";
 
-const UiList = ({ genres, poster, ratings, dates, address }) => {
+const UiList = ({ genres, poster, ratings, dates, address, cast }) => {
   const generateRatingStars = () => {
     let stars = [];
     let fixedRating = parseFloat(ratings.toFixed());
@@ -49,6 +49,17 @@ const UiList = ({ genres, poster, ratings, dates, address }) => {
       <div className="item">
         <i className="map marker icon"></i>
         {address}
+      </div>
+    );
+  } else if (cast) {
+    return (
+      <div className="ui horizontal list">
+        <div className="item">
+          <h3>Stars</h3>
+        </div>
+        <div className="item">{cast.length ? cast[0].name : null}</div>
+        <div className="item">{cast.length ? cast[1].name : null}</div>
+        <div className="item">{cast.length ? cast[2].name : null}</div>
       </div>
     );
   }

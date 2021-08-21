@@ -11,6 +11,7 @@ const CastList = ({ cast }) => {
             src={castItem.image.url}
             alt={castItem.name}
           />
+          <div>{castItem.name}</div>
         </div>
       );
     } else {
@@ -18,7 +19,12 @@ const CastList = ({ cast }) => {
     }
   });
 
-  return <Fragment>{list}</Fragment>;
+  return (
+    <div>
+      <h1 className="category-title">Cast</h1>
+      <div className="cast-list">{list}</div>
+    </div>
+  );
 };
 
 export default CastList;
