@@ -1,6 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
-import CastList from "./CastList";
-import Carousel from "./Carousel";
+import React, { useState, useEffect } from "react";
 import Main from "./Main";
 import { useParams } from "react-router";
 import instance from "../../../apis/movies";

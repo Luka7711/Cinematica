@@ -1,10 +1,10 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./module.details.css";
 import UiList from "./UiList";
 import CastList from "./CastList";
 import instance from "../../../apis/movies";
 import Carousel from "./Carousel";
-import Reviews from "./Reviews";
+import Reviews from "./Reviews/Reviews";
 
 const Main = ({ mainDetails }) => {
   const [cast, setCast] = useState([]);
@@ -62,7 +62,7 @@ const Main = ({ mainDetails }) => {
             <Carousel images={mainDetails.details.images} />
             <Reviews comments={mainDetails.details.reviews.reviews} />
           </div>
-          <CastList cast={cast} />
+          {/* <CastList cast={cast} /> */}
         </div>
       </div>
     </div>

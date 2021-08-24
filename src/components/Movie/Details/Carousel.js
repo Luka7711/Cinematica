@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React from "react";
 
 const Carousel = ({ images }) => {
   let currPos = 0;

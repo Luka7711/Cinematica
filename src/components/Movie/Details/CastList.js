@@ -1,5 +1,4 @@
-import React, { Fragment, useEffect } from "react";
-import instance from "../../../apis/movies";
+import React from "react";
 
 const CastList = ({ cast }) => {
   const list = cast.map((castItem) => {

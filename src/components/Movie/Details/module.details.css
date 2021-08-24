@@ -70,7 +70,7 @@
 .cast-list {
   display: grid;
   grid-template-columns: 100px 100px;
-  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-rows: 150px 150px 150px 150px 150px;
   grid-gap: 50px;
 }
 
