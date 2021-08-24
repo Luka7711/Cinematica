@@ -3,7 +3,8 @@ import instance from "../../../apis/movies";
 
 const CastList = ({ cast }) => {
   const list = cast.map((castItem) => {
-    if (castItem) {
+    console.log(castItem);
+    if (castItem.image) {
       return (
         <div key={castItem.id}>
           <img
