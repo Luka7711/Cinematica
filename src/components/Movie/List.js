@@ -15,6 +15,7 @@ const List = () => {
   const getMovieList = async () => {
     const response = await instance.retrieveMovies("/movies");
     setMovies(response.data.movies);
+    console.log(movies);
   };
 
   const redirectToDetails = (id) => {

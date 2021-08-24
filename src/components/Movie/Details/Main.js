@@ -4,6 +4,7 @@ import UiList from "./UiList";
 import CastList from "./CastList";
 import instance from "../../../apis/movies";
 import Carousel from "./Carousel";
+import Reviews from "./Reviews";
 
 const Main = ({ mainDetails }) => {
   const [cast, setCast] = useState([]);
@@ -29,7 +30,7 @@ const Main = ({ mainDetails }) => {
   return (
     <div className="main-container">
       <div className="event-content">
-        <div class="ui list event-container">
+        <div className="ui list event-container">
           <div className="item">
             <h1 className="movie-title">{mainDetails.event.title}</h1>
           </div>
@@ -59,6 +60,7 @@ const Main = ({ mainDetails }) => {
               </div>
             </div>
             <Carousel images={mainDetails.details.images} />
+            <Reviews comments={mainDetails.details.reviews.reviews} />
           </div>
           <CastList cast={cast} />
         </div>
