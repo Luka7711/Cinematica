@@ -1,5 +1,5 @@
 import React from "react";
-import List from "./Movie/List";
+import List from "./Movie/List/List";
 import About from "./About/About";
 import Navigation from "./Navigation/Navigation";
 import Detail from "./Movie/Details/Detail";

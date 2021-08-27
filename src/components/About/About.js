@@ -1,73 +1,28 @@
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
+import "./module.about.css";
 
-export default function About() {
-  const [elements, setElements] = useState([]);
+const About = () => {
+  const options = ["home", "about", "signup", "others"];
+  const [active, setActive] = useState(true);
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  let links = options.map((item, i) => {
+    return <li key={i}>{item}</li>;
+  });
 
-  useEffect(() => {
-    content();
-  }, []);
-
-  const content = () => {
-    let arr = [];
-    for (let i = 0; i < 20; i++) {
-      let element = (
-        <div
-          className="wrap"
-          style={{ display: "flex !important", flexDirection: "row" }}
-        >
-          <div
-            className="img"
-            style={{
-              background: "blue",
-              width: "150px",
-              height: "100px",
-              border: "1px solid #eee",
-            }}
-          ></div>
-          <div
-            className="img"
-            style={{
-              width: "150px",
-              height: "100px",
-              border: "1px solid #eee",
-            }}
-          ></div>
-          <div
-            class="img"
-            style={{
-              width: "150px",
-              height: "100px",
-              border: "1px solid #eee",
-            }}
-          ></div>
-        </div>
-      );
-      arr.push(element);
-    }
-    setElements(arr);
-  };
   return (
-    <div
-      className="slider"
-      style={{
-        width: "500px",
-        height: "500px",
-        margin: "50px auto",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <Slider {...settings}>{elements}</Slider>
+    <div className="about">
+      <ul className="main-select">
+        <li>
+          Dropdown
+          <i
+            onClick={() => setActive(!active)}
+            className="angle down icon dropdown-icon"
+          ></i>
+        </li>
+        <ul className={active ? "hide" : "show"}>{links}</ul>
+      </ul>
     </div>
   );
-}
+};
+
+export default About;

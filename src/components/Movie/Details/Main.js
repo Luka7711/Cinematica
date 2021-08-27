@@ -54,15 +54,18 @@ const Main = ({ mainDetails }) => {
                 </div>
                 <UiList cast={cast} />
                 <div className="ui list">
-                  <UiList address={mainDetails.event.park_address} />
-                  {/* <UiList dates={mainDetails.event.date} /> */}
+                  <h3 className="event-title">Event details</h3>
+                  <div className="event-date-address">
+                    <UiList address={mainDetails.event.park_address} />
+                    <UiList dates={mainDetails.event.date} />
+                  </div>
                 </div>
               </div>
             </div>
             <Carousel images={mainDetails.details.images} />
             <Reviews comments={mainDetails.details.reviews.reviews} />
           </div>
-          {/* <CastList cast={cast} /> */}
+          <CastList cast={cast} />
         </div>
       </div>
     </div>

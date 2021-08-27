@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
 
 const UiList = ({ genres, poster, ratings, dates, address, cast }) => {
+  const [active, setActive] = useState(false);
   const generateRatingStars = () => {
     let stars = [];
     let fixedRating = parseFloat(ratings.toFixed());
@@ -37,13 +38,16 @@ const UiList = ({ genres, poster, ratings, dates, address, cast }) => {
     return <div className="item rating">{generateRatingStars()}</div>;
   } else if (dates) {
     let splitDates = dates.split(",");
-    return splitDates.map((date) => {
-      return (
-        <div className="item" key={date}>
-          {convertTimeString(date)}
-        </div>
-      );
+    let dts = splitDates.map((date) => {
+      return <div className="item">{convertTimeString(date)}</div>;
     });
+
+    return (
+      <div id="dropdown" className="ui selection dropdown">
+        Date <i class="dropdown icon" onClick={() => setActive(!active)}></i>
+        <div className={active ? "menu active" : "menu"}>{dts}</div>
+      </div>
+    );
   } else if (address) {
     return (
       <div className="item">

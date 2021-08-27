@@ -8,12 +8,12 @@ const Text = ({ context }) => {
   };
 
   const shrinkComment = (text, index) => {
-    if (text.length > 300) {
+    if (text.length > 150 && text.length > 250) {
       return (
         <Fragment>
-          {text.substr(0, 300)}
+          {text.substr(0, 150)}
           <span className={active ? "hide-comment" : null}>
-            {text.substr(300, text.length)}
+            {text.substr(150, text.length)}
           </span>
           <div onClick={extendComment}>
             {active ? "... see more" : "... see less"}

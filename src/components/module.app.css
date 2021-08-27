@@ -3,3 +3,8 @@ body {
   font-size: 18px;
   font-family: "Lato";
 }
+
+.nav {
+  width: 1200px;
+  margin: 0 auto !important;
+}
