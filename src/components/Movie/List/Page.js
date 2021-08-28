@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import { useHistory } from "react-router-dom";
 
-const Page = ({ currentList }) => {
+const Page = ({ currentList, displayByCategory }) => {
   let history = useHistory();
   const list = currentList.map((movie) => {
     return (
@@ -20,7 +20,7 @@ const Page = ({ currentList }) => {
       <div className="movielist">
         <div className="movie-box">{list}</div>
       </div>
-      <Category />
+      <Category displayByCategory={displayByCategory} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const Category = () => {
-  const [currentCategory, setCurrentCategory] = useState(null);
+const Category = ({ displayByCategory }) => {
+  const [currentCategory, setCurrentCategory] = useState("");
   const categories = [
     "Action",
     "Adventure",
@@ -17,10 +17,19 @@ const Category = () => {
     "Sci-Fi",
   ];
 
+  useEffect(() => {
+    if (currentCategory !== "") {
+      displayByCategory(currentCategory);
+    }
+  }, [currentCategory]);
+
   let listOfCategories = categories.map((categ, i) => {
     return (
-      <button onClick={() => setCurrentCategory(categ)} key={i}>
-        {" "}
+      <button
+        className="ui inverted red button"
+        onClick={() => setCurrentCategory(categ)}
+        key={i}
+      >
         {categ}
       </button>
     );

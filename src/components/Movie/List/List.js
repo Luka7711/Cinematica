@@ -11,6 +11,7 @@ const List = () => {
   const [pages, setPages] = useState(0);
   const [currentList, setCurrentList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [generalData, setGeneralData] = useState([]);
   const moviesPerPage = 6;
   let history = useHistory();
 
@@ -29,10 +30,7 @@ const List = () => {
   const getMovies = async (getPage) => {
     const response = await instance.retrieveMovies("/movies");
     setMovies(response.data.movies);
-  };
-
-  const redirectToDetails = (id) => {
-    history.push(`/details/${id}`);
+    setGeneralData(response.data.movies);
   };
 
   const getPages = (moviesPerPage) => {
@@ -71,10 +69,27 @@ const List = () => {
     }
   };
 
+  const displayByCategory = (category) => {
+    // search for movies with category
+    let dataByCategory = [];
+    console.log(category);
+    generalData.map((movie, i) => {
+      movie.details.genres.map((genre) => {
+        if (genre === category) {
+          dataByCategory.push(movie);
+          return;
+        }
+      });
+      return;
+    });
+    // change movie state
+    setMovies(dataByCategory);
+  };
+
   return (
     <div className="main-page">
       <About />
-      <Page currentList={currentList} />
+      <Page currentList={currentList} displayByCategory={displayByCategory} />
       <Btns
         pages={pages}
         changeCurrentPage={changeCurrentPage}

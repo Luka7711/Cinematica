@@ -57,3 +57,9 @@
 .btn-right {
   margin-left: 10px;
 }
+
+.category-list {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+}
