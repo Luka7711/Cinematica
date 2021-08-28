@@ -1,0 +1,27 @@
+.about-container {
+  width: 1200px;
+  margin-bottom: 50px;
+  color: #fff;
+  background-color: #223837;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-header {
+  font-family: "Monoton";
+  word-spacing: 5px;
+  margin-bottom: 20px !important;
+}
+
+.summary-container {
+  width: 600px;
+}
+
+.summary-container p {
+  font-size: 0.9em;
+  text-indent: 30px;
+  font-style: italic;
+}

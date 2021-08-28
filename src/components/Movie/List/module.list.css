@@ -1,17 +1,59 @@
-.movielist-container {
-  background-color: #2c2c2c;
+.main-page {
   max-width: 1200px;
   margin: 50px auto;
 }
+.movielist-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 .movielist {
-  padding-top: 50px;
+  width: 850px;
+}
+
+.movie-box {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: 220px 220px 220px;
   grid-template-rows: auto;
-  grid-gap: 40px;
-  justify-content: center;
+  grid-gap: 50px;
 }
 
 .poster {
   width: 100%;
+}
+
+.category-box {
+  padding: 10px;
+  color: #eee;
+  width: 350px;
+  background-color: #1b1c1d;
+  height: 70vh;
+}
+
+.btn-main {
+  background-color: red;
+  color: #eee;
+  border: none;
+  border-radius: 2px;
+}
+
+.btn-main:hover {
+  background-color: rgb(182, 7, 7);
+  cursor: pointer;
+}
+
+.btn-container {
+  margin: 0 auto;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.btn-left {
+  margin-right: 10px;
+}
+
+.btn-right {
+  margin-left: 10px;
 }

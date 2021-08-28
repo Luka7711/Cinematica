@@ -5,6 +5,7 @@ import Navigation from "./Navigation/Navigation";
 import Detail from "./Movie/Details/Detail";
 import "./module.app.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
             <About />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     );
   }

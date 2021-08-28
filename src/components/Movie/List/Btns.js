@@ -4,21 +4,27 @@ const Btns = ({ pages, changeCurrentPage, currentPage }) => {
   let forRender = [];
   for (let i = 1; i <= pages; i++) {
     let element = (
-      <div
-        onClick={() => changeCurrentPage(i)}
-        key={i}
-        style={{ border: "1px solid #eee", width: "100px", padding: "10px" }}
-      >
-        <div>{i}</div>
-      </div>
+      <button onClick={() => changeCurrentPage(i)} key={i}>
+        {i}
+      </button>
     );
     forRender.push(element);
   }
   return (
-    <div>
-      <button onClick={() => changeCurrentPage(currentPage - 1)}>Prev</button>
+    <div className="btn-container">
+      <button
+        className="btn-main btn-left"
+        onClick={() => changeCurrentPage(currentPage - 1)}
+      >
+        Back
+      </button>
       {forRender}
-      <button onClick={() => changeCurrentPage(currentPage + 1)}>Next</button>
+      <button
+        className="btn-main btn-right"
+        onClick={() => changeCurrentPage(currentPage + 1)}
+      >
+        Forward
+      </button>
     </div>
   );
 };

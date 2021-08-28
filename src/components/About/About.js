@@ -2,25 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./module.about.css";
 
 const About = () => {
-  const options = ["home", "about", "signup", "others"];
-  const [active, setActive] = useState(true);
-
-  let links = options.map((item, i) => {
-    return <li key={i}>{item}</li>;
-  });
-
   return (
-    <div className="about">
-      <ul className="main-select">
-        <li>
-          Dropdown
-          <i
-            onClick={() => setActive(!active)}
-            className="angle down icon dropdown-icon"
-          ></i>
-        </li>
-        <ul className={active ? "hide" : "show"}>{links}</ul>
-      </ul>
+    <div className="about-container">
+      <div>
+        <h1 className="category-title about-header">
+          Enjoy a movie in the parks!
+        </h1>
+      </div>
+      <div className="summary-container">
+        <p>
+          The big screen in your backyard, Movies in the Parks returns this
+          summer, bringing Hollywood movies and local films to local parks for
+          the twentieth season. Join us in-person at the parks for classics from
+          the Golden Age of Hollywood and retro childhood favorites, to the best
+          family-friendly box office favorites from recent years.
+        </p>
+      </div>
     </div>
   );
 };

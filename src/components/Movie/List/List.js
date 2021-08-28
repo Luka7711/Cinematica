@@ -4,13 +4,14 @@ import "./module.list.css";
 import { useHistory } from "react-router-dom";
 import Page from "./Page";
 import Btns from "./Btns";
+import About from "../../About/About";
 
 const List = () => {
   const [movies, setMovies] = useState([]);
   const [pages, setPages] = useState(0);
   const [currentList, setCurrentList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 5;
+  const moviesPerPage = 6;
   let history = useHistory();
 
   useEffect(() => {
@@ -71,15 +72,14 @@ const List = () => {
   };
 
   return (
-    <div className="movielist-container">
-      <div className="movielist">
-        <Page currentList={currentList} />
-        <Btns
-          pages={pages}
-          changeCurrentPage={changeCurrentPage}
-          currentPage={currentPage}
-        />
-      </div>
+    <div className="main-page">
+      <About />
+      <Page currentList={currentList} />
+      <Btns
+        pages={pages}
+        changeCurrentPage={changeCurrentPage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };
