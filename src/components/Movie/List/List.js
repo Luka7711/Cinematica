@@ -42,7 +42,12 @@ const List = ({ moviesForApp }) => {
   };
 
   const getMovies = async (getPage) => {
-    const response = await instance.retrieveMovies("/movies");
+    const response = await instance.retrieveMovies("/movies", {
+      credentials: "include",
+      headers: {
+        "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
+      },
+    });
     setMovies(response.data.movies);
     setGeneralData(response.data.movies);
   };
