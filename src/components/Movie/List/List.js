@@ -29,15 +29,15 @@ const List = ({ moviesForApp }) => {
   }, [currentPage, movies]);
 
   const addToDb = () => {
-    instance
-      .addMovieToDb("/movies", {
+    const response = await fetch(
+      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      {
+        method: "POST",
         headers: {
           "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
         },
-      })
-      .then((response) => {
-        console.log(response);
-      });
+      }
+    );
   };
 
   const getMovies = async (getPage) => {
