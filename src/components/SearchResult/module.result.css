@@ -1,0 +1,8 @@
+.result-container,
+.notfound-container {
+  color: #eee;
+}
+
+.result-container img {
+  width: 150px;
+}

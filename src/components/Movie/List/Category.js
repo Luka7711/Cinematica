@@ -26,7 +26,7 @@ const Category = ({ displayByCategory }) => {
   let listOfCategories = categories.map((categ, i) => {
     return (
       <button
-        className="ui inverted red button"
+        className="ui inverted button"
         onClick={() => setCurrentCategory(categ)}
         key={i}
       >

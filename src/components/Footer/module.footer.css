@@ -1,3 +1,29 @@
 footer {
-  height: 300px;
+  color: #eee;
+  height: 20vh;
+  margin: 100px auto 0;
+  background: #1b1c1d;
+  padding: 50px;
+  max-width: 1200px;
+  border-radius: 5px;
+}
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-left {
+  width: 350px;
+}
+
+.footer-right p {
+  font-size: 0.8em;
+}
+
+.footer-right {
+  width: 500px !important;
+}
+
+.copyright {
+  font-size: 0.6em;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Category from "./Category";
 import { useHistory } from "react-router-dom";
 
-const Page = ({ currentList, displayByCategory }) => {
+const Page = ({ currentList, displayByCategory, children }) => {
   let history = useHistory();
   const list = currentList.map((movie) => {
     return (
@@ -11,7 +11,10 @@ const Page = ({ currentList, displayByCategory }) => {
         key={movie.event.title}
         className="image-container"
       >
-        <img src={movie.details.title.image.url} style={{ width: "100%" }} />
+        <img
+          src={movie.details.title.image.url}
+          style={{ width: "100%", border: "3px solid black" }}
+        />
       </div>
     );
   });
@@ -19,6 +22,7 @@ const Page = ({ currentList, displayByCategory }) => {
     <div className="movielist-container">
       <div className="movielist">
         <div className="movie-box">{list}</div>
+        {children}
       </div>
       <Category displayByCategory={displayByCategory} />
     </div>

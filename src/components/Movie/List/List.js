@@ -12,7 +12,7 @@ const List = ({ moviesForApp }) => {
   const [currentList, setCurrentList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [generalData, setGeneralData] = useState([]);
-  const moviesPerPage = 6;
+  const moviesPerPage = 9;
 
   useEffect(() => {
     getMovies();
@@ -81,18 +81,20 @@ const List = ({ moviesForApp }) => {
       return;
     });
     // change movie state
+    console.log(category, dataByCategory, "data by category");
     setMovies(dataByCategory);
   };
 
   return (
     <div className="main-page">
       <About />
-      <Page currentList={currentList} displayByCategory={displayByCategory} />
-      <Btns
-        pages={pages}
-        changeCurrentPage={changeCurrentPage}
-        currentPage={currentPage}
-      />
+      <Page currentList={currentList} displayByCategory={displayByCategory}>
+        <Btns
+          pages={pages}
+          changeCurrentPage={changeCurrentPage}
+          currentPage={currentPage}
+        />
+      </Page>
     </div>
   );
 };
