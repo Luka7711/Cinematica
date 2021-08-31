@@ -29,7 +29,9 @@ const List = ({ moviesForApp }) => {
   }, [currentPage, movies]);
 
   const addToDb = () => {
-    instance.addMovieToDb("/movies");
+    instance.addMovieToDb("/movies").then((response) => {
+      console.log(response);
+    });
   };
 
   const getMovies = async (getPage) => {
