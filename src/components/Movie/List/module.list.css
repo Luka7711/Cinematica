@@ -70,3 +70,9 @@
   grid-template-columns: 100px 100px 100px;
   grid-gap: 10px;
 }
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all ease 0.2s;
+}
