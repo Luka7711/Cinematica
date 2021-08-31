@@ -29,9 +29,16 @@ const List = ({ moviesForApp }) => {
   }, [currentPage, movies]);
 
   const addToDb = () => {
-    instance.addMovieToDb("/movies").then((response) => {
-      console.log(response);
-    });
+    instance
+      .addMovieToDb("/movies", {
+        credentials: "include",
+        headers: {
+          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   const getMovies = async (getPage) => {
