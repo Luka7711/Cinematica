@@ -30,7 +30,10 @@ const List = ({ moviesForApp }) => {
 
   const addToDb = async () => {
     const response = await fetch(
-      "https://movie-dbs.herokuapp.com/chicago-cinema/movies"
+      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      {
+        method: "POST",
+      }
     );
   };
 
