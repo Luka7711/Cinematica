@@ -32,10 +32,9 @@ const List = ({ moviesForApp }) => {
     const response = await fetch(
       "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
-        method: "POST",
         credentials: "include",
         headers: {
-          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
+          "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com/",
         },
       }
     );
@@ -45,7 +44,7 @@ const List = ({ moviesForApp }) => {
     const response = await instance.retrieveMovies("/movies", {
       credentials: "include",
       headers: {
-        "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
+        "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com/",
       },
     });
     setMovies(response.data.movies);
