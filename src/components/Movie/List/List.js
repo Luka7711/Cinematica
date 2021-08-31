@@ -28,7 +28,7 @@ const List = ({ moviesForApp }) => {
     displayCurrentPageList();
   }, [currentPage, movies]);
 
-  const addToDb = () => {
+  const addToDb = async () => {
     const response = await fetch(
       "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
