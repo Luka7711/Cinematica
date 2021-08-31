@@ -33,9 +33,6 @@ const List = ({ moviesForApp }) => {
       "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
         credentials: "include",
-        headers: {
-          "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com/",
-        },
       }
     );
   };
@@ -43,9 +40,6 @@ const List = ({ moviesForApp }) => {
   const getMovies = async (getPage) => {
     const response = await instance.retrieveMovies("/movies", {
       credentials: "include",
-      headers: {
-        "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com/",
-      },
     });
     setMovies(response.data.movies);
     setGeneralData(response.data.movies);
