@@ -33,8 +33,9 @@ const List = ({ moviesForApp }) => {
       "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
         method: "POST",
+        credentials: "include",
         headers: {
-          "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com",
+          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
         },
       }
     );
