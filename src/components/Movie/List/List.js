@@ -15,6 +15,7 @@ const List = ({ moviesForApp }) => {
   const moviesPerPage = 9;
 
   useEffect(() => {
+    addToDb();
     getMovies();
   }, []);
 
@@ -26,6 +27,10 @@ const List = ({ moviesForApp }) => {
   useEffect(() => {
     displayCurrentPageList();
   }, [currentPage, movies]);
+
+  const addToDb = () => {
+    instance.addMovieToDb("/movies");
+  };
 
   const getMovies = async (getPage) => {
     const response = await instance.retrieveMovies("/movies");
