@@ -34,7 +34,7 @@ const List = ({ moviesForApp }) => {
       {
         method: "POST",
         headers: {
-          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
+          "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com",
         },
       }
     );
