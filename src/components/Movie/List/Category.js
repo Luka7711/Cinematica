@@ -38,7 +38,7 @@ const Category = ({ displayByCategory }) => {
   return (
     <div className="category-box">
       <h1 className="category-title">Categories</h1>
-      <div class="category-list">{listOfCategories}</div>
+      <div className="category-list">{listOfCategories}</div>
     </div>
   );
 };

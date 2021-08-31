@@ -6,15 +6,21 @@ import Detail from "./Movie/Details/Detail";
 import "./module.app.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./Footer/Footer";
+import SearchResult from "./SearchResult/Result";
 
 class App extends React.Component {
+  state = { movies: [] };
+
+  moviesForApp = (dataOfMovies) => {
+    this.setState({ movies: dataOfMovies });
+  };
   render() {
     return (
       <Router>
         <Navigation />
         <Switch>
           <Route exact path="/">
-            <List />
+            <List moviesForApp={this.moviesForApp} />
           </Route>
 
           <Route path="/details/:id">
@@ -22,6 +28,9 @@ class App extends React.Component {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/search/:name">
+            <SearchResult movies={this.state.movies} />
           </Route>
         </Switch>
         <Footer />

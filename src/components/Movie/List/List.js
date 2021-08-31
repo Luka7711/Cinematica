@@ -6,14 +6,13 @@ import Page from "./Page";
 import Btns from "./Btns";
 import About from "../../About/About";
 
-const List = () => {
+const List = ({ moviesForApp }) => {
   const [movies, setMovies] = useState([]);
   const [pages, setPages] = useState(0);
   const [currentList, setCurrentList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [generalData, setGeneralData] = useState([]);
   const moviesPerPage = 6;
-  let history = useHistory();
 
   useEffect(() => {
     getMovies();
@@ -21,6 +20,7 @@ const List = () => {
 
   useEffect(() => {
     getPages(moviesPerPage);
+    moviesForApp(movies);
   }, [movies]);
 
   useEffect(() => {
@@ -45,7 +45,6 @@ const List = () => {
   };
 
   const displayCurrentPageList = () => {
-    console.log("hello");
     let startAt = moviesPerPage * (currentPage - 1);
     if (movies.length > 0) {
       let currentMoviePage = [];
@@ -72,7 +71,6 @@ const List = () => {
   const displayByCategory = (category) => {
     // search for movies with category
     let dataByCategory = [];
-    console.log(category);
     generalData.map((movie, i) => {
       movie.details.genres.map((genre) => {
         if (genre === category) {
