@@ -31,7 +31,6 @@ const List = ({ moviesForApp }) => {
   const addToDb = () => {
     instance
       .addMovieToDb("/movies", {
-        credentials: "include",
         headers: {
           "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
         },
