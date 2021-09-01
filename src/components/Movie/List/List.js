@@ -16,7 +16,7 @@ const List = ({ moviesForApp }) => {
 
   useEffect(() => {
     addToDb();
-    getMovies();
+    // getMovies();
   }, []);
 
   useEffect(() => {
@@ -38,13 +38,13 @@ const List = ({ moviesForApp }) => {
     );
   };
 
-  const getMovies = async (getPage) => {
-    const response = await instance.retrieveMovies("/movies", {
-      credentials: "include",
-    });
-    setMovies(response.data.movies);
-    setGeneralData(response.data.movies);
-  };
+  // const getMovies = async (getPage) => {
+  //   const response = await instance.retrieveMovies("/movies", {
+  //     credentials: "include",
+  //   });
+  //   setMovies(response.data.movies);
+  //   setGeneralData(response.data.movies);
+  // };
 
   const getPages = (moviesPerPage) => {
     let data = movies.length;
