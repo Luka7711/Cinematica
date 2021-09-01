@@ -35,8 +35,7 @@ const List = ({ moviesForApp }) => {
         method: "POST",
         credentials: "include",
         headers: {
-          "Access-Control-Allow-Origin":
-            "https://movies-in-park.herokuapp.com/",
+          "Access-Control-Allow-Origin": "'https://movie-dbs.herokuapp.com",
         },
       }
     );
@@ -46,7 +45,7 @@ const List = ({ moviesForApp }) => {
     const response = await instance.retrieveMovies("/movies", {
       credentials: "include",
       headers: {
-        "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com/",
+        "Access-Control-Allow-Origin": "https://movie-dbs.herokuapp.com",
       },
     });
     setMovies(response.data.movies);
