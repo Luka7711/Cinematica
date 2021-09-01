@@ -35,8 +35,7 @@ const List = ({ moviesForApp }) => {
         method: "POST",
         credentials: "include",
         headers: {
-          "Access-Control-Allow-Origin":
-            "https://movies-in-park.herokkuapp.com",
+          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
         },
       }
     );
@@ -49,8 +48,7 @@ const List = ({ moviesForApp }) => {
         method: "GET",
         credentials: "include",
         headers: {
-          "Access-Control-Allow-Origin":
-            "https://movies-in-park.herokkuapp.com",
+          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
         },
       }
     );
