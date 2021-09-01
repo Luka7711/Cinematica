@@ -41,10 +41,13 @@ const List = ({ moviesForApp }) => {
 
   const getMovies = async () => {
     const response = await fetch(
-      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      "http://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
         method: "GET",
         credentials: "include",
+        headers: {
+          "Access-Control-Allow-Origin": "http://movies-in-park.herokuapp.com",
+        },
       }
     );
     console.log(response, "response");
