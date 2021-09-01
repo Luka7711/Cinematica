@@ -15,7 +15,7 @@ const List = ({ moviesForApp }) => {
   const moviesPerPage = 9;
 
   useEffect(() => {
-    addToDb();
+    // addToDb();
     getMovies();
   }, []);
 
@@ -28,16 +28,16 @@ const List = ({ moviesForApp }) => {
     displayCurrentPageList();
   }, [currentPage, movies]);
 
-  const addToDb = async () => {
-    const response = await fetch(
-      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
-      {
-        method: "POST",
-        credentials: "include",
-        mode: "no-cors",
-      }
-    );
-  };
+  // const addToDb = async () => {
+  //   const response = await fetch(
+  //     "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+  //     {
+  //       method: "POST",
+  //       credentials: "include",
+  //       mode: "no-cors",
+  //     }
+  //   );
+  // };
 
   const getMovies = async () => {
     const response = await fetch(
@@ -48,6 +48,7 @@ const List = ({ moviesForApp }) => {
         mode: "no-cors",
       }
     );
+    console.log(response, "response");
     setMovies(response.data.movies);
     setGeneralData(response.data.movies);
   };
