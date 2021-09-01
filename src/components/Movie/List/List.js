@@ -34,7 +34,7 @@ const List = ({ moviesForApp }) => {
       {
         method: "POST",
         credentials: "include",
-        mode: "cors",
+        mode: "no-cors",
       }
     );
   };
@@ -45,7 +45,7 @@ const List = ({ moviesForApp }) => {
       {
         method: "GET",
         credentials: "include",
-        mode: "cors",
+        mode: "no-cors",
       }
     );
     setMovies(response.data.movies);
