@@ -45,7 +45,6 @@ const List = ({ moviesForApp }) => {
       {
         method: "GET",
         credentials: "include",
-        mode: "no-cors",
       }
     );
     console.log(response, "response");
