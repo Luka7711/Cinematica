@@ -45,9 +45,6 @@ const List = ({ moviesForApp }) => {
       {
         method: "GET",
         credentials: "include",
-        headers: {
-          "Access-Control-Allow-Origin": "https://movies-in-park.herokuapp.com",
-        },
       }
     );
     console.log(response, "response");
