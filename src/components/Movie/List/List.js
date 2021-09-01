@@ -16,7 +16,7 @@ const List = ({ moviesForApp }) => {
 
   useEffect(() => {
     addToDb();
-    // getMovies();
+    getMovies();
   }, []);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const List = ({ moviesForApp }) => {
 
   const addToDb = async () => {
     const response = await fetch(
-      "http://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
       {
         method: "POST",
         credentials: "include",
@@ -38,13 +38,17 @@ const List = ({ moviesForApp }) => {
     );
   };
 
-  // const getMovies = async (getPage) => {
-  //   const response = await instance.retrieveMovies("/movies", {
-  //     credentials: "include",
-  //   });
-  //   setMovies(response.data.movies);
-  //   setGeneralData(response.data.movies);
-  // };
+  const getMovies = async () => {
+    const response = await fetch(
+      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      {
+        method: "GET",
+        credentials: "include",
+      }
+    );
+    setMovies(response.data.movies);
+    setGeneralData(response.data.movies);
+  };
 
   const getPages = (moviesPerPage) => {
     let data = movies.length;
