@@ -39,6 +39,8 @@ const List = ({ moviesForApp }) => {
   //   );
   // };
 
+  ("token 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");
+
   const getMovies = async () => {
     const response = await fetch(
       "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
