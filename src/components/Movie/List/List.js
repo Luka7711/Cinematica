@@ -44,7 +44,8 @@ const List = ({ moviesForApp }) => {
       'https://movie-dbs.herokuapp.com/chicago-cinema/movies',
       {
         method: 'GET',
-        credentials: true
+        credentials: 'same-origin',
+        mode: 'cors'
       }
     );
     console.log(response, 'response');
