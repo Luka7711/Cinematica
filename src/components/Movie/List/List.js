@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
-import instance from "../../../apis/movies";
-import "./module.list.css";
-import { useHistory } from "react-router-dom";
-import Page from "./Page";
-import Btns from "./Btns";
-import About from "../../About/About";
+import React, { Fragment, useEffect, useState } from 'react';
+import instance from '../../../apis/movies';
+import './module.list.css';
+import { useHistory } from 'react-router-dom';
+import Page from './Page';
+import Btns from './Btns';
+import About from '../../About/About';
 
 const List = ({ moviesForApp }) => {
   const [movies, setMovies] = useState([]);
@@ -39,22 +39,20 @@ const List = ({ moviesForApp }) => {
   //   );
   // };
 
-  ("token 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");
-
   const getMovies = async () => {
     const response = await fetch(
-      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+      'https://movie-dbs.herokuapp.com/chicago-cinema/movies',
       {
-        method: "GET",
-        credentials: "include",
+        method: 'GET',
+        credentials: 'include'
       }
     );
-    console.log(response, "response");
+    console.log(response, 'response');
     setMovies(response.data.movies);
     setGeneralData(response.data.movies);
   };
 
-  const getPages = (moviesPerPage) => {
+  const getPages = moviesPerPage => {
     let data = movies.length;
     let pageNums = 0;
     while (data > 0) {
@@ -83,17 +81,17 @@ const List = ({ moviesForApp }) => {
     }
   };
 
-  const changeCurrentPage = (pageNum) => {
+  const changeCurrentPage = pageNum => {
     if (pageNum > 0 && pageNum <= pages) {
       setCurrentPage(pageNum);
     }
   };
 
-  const displayByCategory = (category) => {
+  const displayByCategory = category => {
     // search for movies with category
     let dataByCategory = [];
     generalData.map((movie, i) => {
-      movie.details.genres.map((genre) => {
+      movie.details.genres.map(genre => {
         if (genre === category) {
           dataByCategory.push(movie);
           return;
@@ -102,12 +100,12 @@ const List = ({ moviesForApp }) => {
       return;
     });
     // change movie state
-    console.log(category, dataByCategory, "data by category");
+    console.log(category, dataByCategory, 'data by category');
     setMovies(dataByCategory);
   };
 
   return (
-    <div className="main-page">
+    <div className='main-page'>
       <About />
       <Page currentList={currentList} displayByCategory={displayByCategory}>
         <Btns
