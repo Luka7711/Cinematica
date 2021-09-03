@@ -40,7 +40,7 @@ const List = ({ moviesForApp }) => {
   // };
 
   const getMovies = () => {
-    fetch("http://localhost:9000/chicago-cinema/movies", {
+    fetch("https://movie-dbs.herokuapp.com", {
       method: "GET",
     })
       .then((response) => response.json())
