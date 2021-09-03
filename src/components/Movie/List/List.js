@@ -39,19 +39,14 @@ const List = ({ moviesForApp }) => {
   //   );
   // };
 
-  ("token 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");
-
-  const getMovies = async () => {
-    const response = await fetch(
-      "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
-      {
-        method: "GET",
-        credentials: "include",
-      }
-    );
-    console.log(response, "response");
-    setMovies(response.data.movies);
-    setGeneralData(response.data.movies);
+  const getMovies = () => {
+    fetch("http://localhost:9000/chicago-cinema/movies", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+    // setMovies(response.data.movies);
+    // setGeneralData(response.data.movies);
   };
 
   const getPages = (moviesPerPage) => {
