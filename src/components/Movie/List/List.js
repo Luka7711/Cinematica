@@ -41,7 +41,7 @@ const List = ({ moviesForApp }) => {
 
   const getMovies = async () => {
     const response = await fetch(
-      "https://movies-in-park.herokuapp.com/chicago-cinema/movies",
+      "https://movies-in-park.herokuapp.com/movies",
       {
         method: "GET",
       }
