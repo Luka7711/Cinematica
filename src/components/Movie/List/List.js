@@ -39,8 +39,8 @@ const List = ({ moviesForApp }) => {
   //   );
   // };
 
-  const getMovies = () => {
-    let response = instance.retrieveMovies("/movies");
+  const getMovies = async () => {
+    let response = await instance.retrieveMovies("/movies");
     console.log(response);
     // setMovies(response.data.movies);
     // setGeneralData(response.data.movies);
