@@ -44,7 +44,7 @@ const List = ({ moviesForApp }) => {
       method: "GET",
     }).then((response) => {
       console.log(response);
-      response.json().then((data) => console.log(data));
+      JSON.parse(response).then((data) => console.log(data));
     });
     // setMovies(response.data.movies);
     // setGeneralData(response.data.movies);
