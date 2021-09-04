@@ -20,7 +20,6 @@ const getCast = axios.create({
 });
 
 const calls = {
-  addMovieToDb,
   retrieveMovies,
   getDetails,
   getCast,
