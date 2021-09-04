@@ -1,17 +1,12 @@
 import axios from "axios";
 
-const addMovieToDb = axios.create({
-  baseURL: "https://movie-dbs.herokuapp.com/chicago-cinema",
-  method: "post",
-});
-
 const retrieveMovies = axios.create({
   baseURL: "https://daily-blogs-v.herokuapp.com/chicago-cinema",
   method: "get",
 });
 
 const getDetails = axios.create({
-  baseURL: "https://movie-dbs.herokuapp.com/chicago-cinema/movies",
+  baseURL: "https://daily-blogs-v.herokuapp.com/chicago-cinema/movies",
   method: "get",
 });
 
