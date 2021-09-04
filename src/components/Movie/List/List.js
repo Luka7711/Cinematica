@@ -42,9 +42,7 @@ const List = ({ moviesForApp }) => {
   const getMovies = () => {
     fetch("https://movies-in-park.herokuapp.com/chicago-cinema/movies", {
       method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    }).then((response) => console.log(response));
     // setMovies(response.data.movies);
     // setGeneralData(response.data.movies);
   };
