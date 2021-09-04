@@ -39,14 +39,13 @@ const List = ({ moviesForApp }) => {
   //   );
   // };
 
-  const getMovies = async () => {
-    const response = await fetch(
-      "https://movies-in-park.herokuapp.com/chicago-cinema/movies",
-      {
-        method: "GET",
-      }
-    );
-    console.log(response);
+  const getMovies = () => {
+    fetch("https://movies-in-park.herokuapp.com/chicago-cinema/movies", {
+      method: "GET",
+    }).then((response) => {
+      console.log(response);
+      response.json().then((data) => console.log(data));
+    });
     // setMovies(response.data.movies);
     // setGeneralData(response.data.movies);
   };
