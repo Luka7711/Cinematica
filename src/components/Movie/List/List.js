@@ -42,7 +42,6 @@ const List = ({ moviesForApp }) => {
   const getMovies = () => {
     fetch("https://daily-blogs-v.herokuapp.com/movies", {
       method: "GET",
-      credentials: "include",
     })
       .then((response) => response.json())
       .then((data) => console.log(data));
