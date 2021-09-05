@@ -11,7 +11,7 @@ const getDetails = axios.create({
 });
 
 const getCast = axios.create({
-  baseURL: "http://imdb8.p.rapidapi.com/actors",
+  baseURL: "https://imdb8.p.rapidapi.com/actors",
   method: "GET",
   headers: {
     "x-rapidapi-key": "d3e39eeecfmsh3998390045e2466p154abfjsna7eb052dce03",

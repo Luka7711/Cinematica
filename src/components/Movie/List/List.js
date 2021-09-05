@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import instance from "../../../apis/movies";
 import "./module.list.css";
-import { useHistory } from "react-router-dom";
 import Page from "./Page";
 import Btns from "./Btns";
 import About from "../../About/About";
@@ -24,7 +23,7 @@ const List = ({ moviesForApp }) => {
   }, [movies]);
 
   useEffect(() => {
-    displayCurrentPageList();
+    displayCurrentPageList(movies);
   }, [currentPage, movies]);
 
   const getMovies = async () => {
@@ -44,15 +43,15 @@ const List = ({ moviesForApp }) => {
     setPages(pageNums);
   };
 
-  const displayCurrentPageList = () => {
+  const displayCurrentPageList = (movieData) => {
     let startAt = moviesPerPage * (currentPage - 1);
-    if (movies.length > 0) {
+    if (movieData.length > 0) {
       let currentMoviePage = [];
       for (let i = startAt; i < startAt + moviesPerPage; i++) {
-        if (movies[i]) {
-          currentMoviePage.push(movies[i]);
+        if (movieData[i]) {
+          currentMoviePage.push(movieData[i]);
         }
-        if (movies[i + 1] === undefined) {
+        if (movieData[i + 1] === undefined) {
           setCurrentList(currentMoviePage);
           return;
         }
@@ -81,7 +80,7 @@ const List = ({ moviesForApp }) => {
       return;
     });
     // change movie state
-    console.log(category, dataByCategory, "data by category");
+    setCurrentPage(1);
     setMovies(dataByCategory);
   };
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 const CastList = ({ cast }) => {
+  console.log(cast, "cast");
   const list = cast.map((castItem) => {
     if (castItem.image) {
       return (
