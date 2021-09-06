@@ -19,10 +19,30 @@ const getCast = axios.create({
   },
 });
 
+const getVideoId = axios.create({
+  baseURL: "https://imdb8.p.rapidapi.com/title",
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+    "x-rapidapi-key": "d3e39eeecfmsh3998390045e2466p154abfjsna7eb052dce03",
+  },
+});
+
+const getVideoSrc = axios.create({
+  baseURL: "https://imdb8.p.rapidapi.com/title",
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "imdb8.p.rapidapi.com",
+    "x-rapidapi-key": "d3e39eeecfmsh3998390045e2466p154abfjsna7eb052dce03",
+  },
+});
+
 const calls = {
   retrieveMovies,
   getDetails,
   getCast,
+  getVideoId,
+  getVideoSrc,
 };
 
 export default calls;
