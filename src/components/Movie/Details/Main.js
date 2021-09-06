@@ -68,7 +68,7 @@ const Main = ({ mainDetails }) => {
               <Carousel images={mainDetails.details.images} />
               <Reviews comments={mainDetails.details.reviews.reviews} />
             </div>
-            {/* <CastList cast={cast} /> */}
+            <CastList cast={cast} />
           </div>
         </div>
       </div>
